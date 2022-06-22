@@ -10,6 +10,11 @@
         <module name="twitter-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bot-twitter" target="11" />
+      <module name="dolar-service" target="11" />
+      <module name="twitter-service" target="11" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
