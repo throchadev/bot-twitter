@@ -8,4 +8,5 @@ public class ConstantsUtil {
 
   public static final String PATH_SEPARATOR_BAR = "/";
   public static final String PATH_COIN = "USD-BRL";
+  public static final String LAST = "last";
 }
