@@ -1,4 +1,4 @@
-package br.com.throchadev.services;
+package br.com.throchadev.client;
 
 import br.com.throchadev.configuration.AppConfiguration;
 import org.springframework.http.HttpStatus;
@@ -12,12 +12,12 @@ import static br.com.throchadev.utils.ConstantsUtil.*;
 @Service
 public class DolarService {
 
-  private AppConfiguration appConfiguration;
-  private WebClient webClient;
+  private final AppConfiguration appConfiguration;
+  private final WebClient webClient;
 
   public DolarService(AppConfiguration appConfiguration, WebClient.Builder builder) {
     this.appConfiguration = appConfiguration;
-    this.webClient = builder.baseUrl(appConfiguration.getUrl()).build();;
+    this.webClient = builder.baseUrl(appConfiguration.getUrl()).build();
   }
 
   public Mono<String> getDolar() {
