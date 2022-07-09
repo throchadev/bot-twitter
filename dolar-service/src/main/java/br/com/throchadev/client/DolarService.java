@@ -1,6 +1,7 @@
 package br.com.throchadev.client;
 
 import br.com.throchadev.configuration.AppConfiguration;
+import br.com.throchadev.objects.Root;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class DolarService {
     this.webClient = builder.baseUrl(appConfiguration.getUrl()).build();
   }
 
-  public Mono<String> getDolar() {
+  public Mono<Root> getDolar() {
 
     return webClient
         .get()
@@ -29,6 +30,6 @@ public class DolarService {
         .retrieve()
         .onStatus(HttpStatus::is4xxClientError,
             error -> Mono.error(new RuntimeException("Check the information")))
-        .bodyToMono(String.class);
+        .bodyToMono(Root.class);
   }
 }
