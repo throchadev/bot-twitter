@@ -1,6 +1,6 @@
 package br.com.throchadev.controller;
 
-import br.com.throchadev.client.DolarService;
+import br.com.throchadev.client.DolarClient;
 import br.com.throchadev.dto.DolarDto;
 import br.com.throchadev.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono;
 public class DolarController {
 
   @Autowired
-  private DolarService dolarService;
+  private DolarClient dolarService;
 
   @Scheduled(fixedDelay = 5000)
   @GetMapping
