@@ -5,6 +5,7 @@ import br.com.throchadev.dto.DolarDto;
 import br.com.throchadev.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -18,6 +19,7 @@ public class DolarController {
   @Autowired
   private DolarService dolarService;
 
+  @Scheduled(fixedDelay = 5000)
   @GetMapping
   @ResponseStatus(HttpStatus.OK)
   public Mono<DolarDto> getDolar() {

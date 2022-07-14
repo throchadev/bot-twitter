@@ -13,11 +13,9 @@ import static br.com.throchadev.utils.ConstantsUtil.*;
 @Service
 public class DolarService {
 
-  private final AppConfiguration appConfiguration;
   private final WebClient webClient;
 
   public DolarService(AppConfiguration appConfiguration, WebClient.Builder builder) {
-    this.appConfiguration = appConfiguration;
     this.webClient = builder.baseUrl(appConfiguration.getUrl()).build();
   }
 
